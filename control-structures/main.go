@@ -23,12 +23,27 @@ func main() {
     fmt.Printf("Your deposit: ")
     var depositMount float32
     fmt.Scan(&depositMount)
+    // Nested if Statements
+    if depositMount <= 0 {
+      fmt.Printf("Invalid mount. Most be greather than 0.\n")
+      return
+    }
     yourBalance += depositMount
     fmt.Printf("Balancer update is: %.2f\n", yourBalance)
   } else if choice == 3 {
     fmt.Printf("How much money do you takeout?\n")
     var withdrawMoney float32
     fmt.Scan(&withdrawMoney)
+    // Nested if Statements
+    if withdrawMoney <= 0 {
+      fmt.Printf("Invalid mount. Most be greather than 0.\n")
+      return
+    }
+    if withdrawMoney > yourBalance {
+      fmt.Printf("Invalid mount. Most be less than value in your account.\n")
+      return
+    }
+
     yourBalance -= withdrawMoney
     fmt.Printf("Balancer update is: %.2f\n", yourBalance)
   } else if choice == 4 {
