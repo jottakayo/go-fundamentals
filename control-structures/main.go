@@ -4,7 +4,7 @@ import "fmt"
 
 func main() {  
   var yourBalance float32 = 1000
-
+  var choice int
   for i := 0; i < 3; i++ {
     fmt.Printf("Welcome to Golang Bank!\n")
     fmt.Printf("What do you want to do?\n")
@@ -12,11 +12,8 @@ func main() {
     fmt.Printf("2. Deposit Money\n")
     fmt.Printf("3. Withdraw Money\n")
     fmt.Printf("4. Exit\n")
-    var choice int
     fmt.Printf("which one do you choose?\n")
     fmt.Scanln(&choice)
-    // fmt.Printf("You chose option %d\n", choice)
-    // checkBalance := choice ==1
 
     if choice == 1 {
       fmt.Printf("Your balance is %f\n", yourBalance)
@@ -44,7 +41,6 @@ func main() {
         fmt.Printf("Invalid mount. Most be less than value in your account.\n")
         return
       }
-
       yourBalance -= withdrawMoney
       fmt.Printf("Balancer update is: %.2f\n", yourBalance)
     } else if choice == 4 {
